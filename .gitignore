@@ -1,0 +1,10 @@
+public/
+resources/
+node_modules/
+.hugo_build.lock
+.cache/
+.DS_Store
+/assets/jsconfig.json
+/assets/tsconfig.json
+hugo_stats.json
+.hugo_build.lock

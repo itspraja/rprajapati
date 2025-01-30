@@ -1,0 +1,22 @@
+# -- Site Configuration --
+
+theme = "congo"
+
+# baseURL = "https://rprajapati.com/"
+defaultContentLanguage = "en"
+
+enableRobotsTXT = true
+summaryLength = 0
+
+[pagination]
+  pagerSize = 10
+
+googleAnalytics = "G-FFKB2P7K35"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
