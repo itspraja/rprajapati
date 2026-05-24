@@ -1,6 +1,6 @@
 ---
 title: Research
-description: Projects and Research Focus
+description: Research focus and publications
 showPagination: false
 showDate: false
 showAuthor: false
@@ -8,38 +8,44 @@ showReadingTime: false
 showTableOfContents: true
 ---
 
-My work sits at the intersection of **streaming graph algorithms**, 
-**distributed systems**, and **GPU-accelerated computing**. 
-The unifying theme: using graphs as a first-principles framework 
-to make large-scale computation fast, correct, and practical.
+My work sits at the intersection of **streaming graph algorithms**, **distributed systems**, and **GPU-accelerated computing** — using graphs as a unifying framework to make large-scale computation fast, correct, and practical.
 
 ---
 
-## SAGA — State-Aware Streaming Graph Analytics
+## Focus Areas
 
-Large graphs change continuously — edges are inserted and deleted 
-at high throughput. Most systems recompute analytics from scratch 
-on each update, which doesn't scale. SAGA is a distributed framework 
-that maintains analytical state incrementally over dynamic graphs, 
-propagating only the changes that matter across partitions.
+**01 — Streaming Graph Systems**\
+Algorithms and frameworks for real-time maintenance of large, evolving graphs — vertex coloring, maximal matching, and SimRank on continuous edge streams.
 
-*Accepted · HPDC 2026*
+**02 — Distributed Graph Analytics**\
+Scalable distributed frameworks for graph processing at scale, with attention to state management, fault tolerance, and partition-aware runtime efficiency.
 
----
+**03 — Efficient LLM Deployment**\
+Retrieval-augmented pipelines, model compression, and inference optimization on on-prem H100 GPU clusters for engineering workflows at Shell R&D.
 
-## StreamGC — Real-Time Vertex Coloring on Parallel Systems
-
-Vertex coloring assigns labels to nodes such that no two adjacent 
-nodes share a label. In the streaming setting, edges arrive in 
-batches and the coloring must be maintained without global 
-synchronization. StreamGC handles this on parallel systems 
-with low update latency.
+**04 — Graph-Augmented AI**\
+Using graph structure to improve representation learning, knowledge retrieval, and semantic ranking in large-scale information systems.
 
 ---
 
-## Past Work
+## Publications
 
-**Semantic PageRank** *(M.Tech Thesis, IIT Jodhpur · 2022–2024)*  
-Extended classical PageRank with knowledge graph signals to improve 
-ranking quality on academic corpora. Applied distributed graph 
-processing on Apache Spark GraphX.
+`HPDC 2026` &nbsp; **SAGA: A Framework for State-Aware Streaming Graph Analytics**\
+**Rohit Prajapati**, Dip Sankar Banerjee · Cleveland, OH, USA
+
+Large graphs change continuously — edges arrive and depart at high throughput. SAGA maintains analytical state *incrementally* over dynamic graphs, propagating only the affected deltas across partitions rather than reprocessing the entire graph.
+
+`SIGMOD 2026` &nbsp; **PJsim: Towards Precise and Scalable Graph Similarity**\
+Prajjwal Nijhara, Jainan Tandel, **Rohit Prajapati**, Dip Sankar Banerjee · Bangalore, India
+
+A precise, closed-form reformulation of SimRank that scales to large graphs without the approximation errors that plague existing methods.
+
+`ICDCN 2026` &nbsp; **A Precise and Closed-Form Solution for Edge-Ranking**\
+Prajjwal Nijhara, Jainan Tandel, **Rohit Prajapati**, Dip Sankar Banerjee · Nara, Japan
+
+---
+
+## In Progress
+
+**StreamGC — Real-Time Vertex Coloring on Parallel Systems** *(in preparation)*\
+Maintains graph colorings under continuous edge arrivals on parallel shared-memory systems, with low update latency and strong color-quality guarantees.
