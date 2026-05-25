@@ -304,6 +304,10 @@ section:last-of-type { border-bottom: none; }
   font-size: 1rem;
   color: var(--ink-muted);
 }
+.footer-copy {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
 .footer-icons { display: flex; gap: 6px; }
 .footer-icons a {
   width: 32px;
@@ -495,6 +499,7 @@ section:last-of-type { border-bottom: none; }
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-name">Rohit Prajapati</div>
+    <div class="footer-copy" id="footer-copy"></div>
     <div class="footer-icons">
       <a href="mailto:prajapati.rohit@hotmail.com" title="Email">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -522,6 +527,12 @@ function toggleBib(btn) {
   const open  = block.classList.toggle('open');
   btn.textContent = open ? 'Hide' : 'BibTeX';
 }
+
+(function () {
+  const start = 2025, now = new Date().getFullYear();
+  const el = document.getElementById('footer-copy');
+  el.textContent = '© ' + (now > start ? start + '–' + now : start) + ' Rohit Prajapati';
+})();
 
 (function () {
   const statuses = [
