@@ -63,15 +63,29 @@ body {
   text-decoration: none;
   letter-spacing: -0.01em;
 }
-.nav-links { display: flex; gap: 2rem; }
-.nav-links a {
-  font-size: 13px;
+.nav-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
   color: var(--ink-muted);
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 0.15s;
+  font-family: var(--sans);
 }
-.nav-links a:hover { color: var(--ink); }
+.nav-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.nav-status-text {
+  transition: opacity 0.4s;
+}
 
 /* ── Container ── */
 .page { max-width: 780px; margin: 0 auto; padding: 0 2.5rem; }
@@ -173,7 +187,7 @@ section:last-of-type { border-bottom: none; }
   margin-bottom: 2.2rem;
 }
 
-/* ── What's New ── */
+/* ── Lately ── */
 .news-list { display: flex; flex-direction: column; gap: 0; }
 .news-row {
   display: grid;
@@ -329,7 +343,9 @@ section:last-of-type { border-bottom: none; }
 
 <nav class="nav">
   <a href="#top" class="nav-mark">Rohit Prajapati</a>
-  <div class="nav-links">
+  <div class="nav-status">
+    <span class="nav-status-dot"></span>
+    <span class="nav-status-text" id="nav-status-text">debugging a graph</span>
   </div>
 </nav>
 
@@ -368,8 +384,12 @@ section:last-of-type { border-bottom: none; }
 
   <!-- WHAT'S NEW -->
   <section id="news">
-    <div class="sec-header reveal">News</div>
+    <div class="sec-header reveal">Lately</div>
     <div class="news-list">
+      <div class="news-row reveal">
+        <div class="news-date">Jun 2026</div>
+        <div class="news-body">Attending <strong>SIGMOD/PODS 2026</strong> in Bengaluru.</div>
+      </div>
       <div class="news-row reveal">
         <div class="news-date">May 2026</div>
         <div class="news-body">Paper accepted at <strong>HPDC 2026</strong> — SAGA: A Framework for State-Aware Streaming Graph Analytics.</div>
@@ -504,6 +524,31 @@ function toggleBib(btn) {
 }
 
 (function () {
+  const statuses = [
+    'debugging a graph',
+    'waiting for reviewer 3',
+    'on my third coffee',
+    'training a model I don\'t trust',
+    'chasing O(log n)',
+    'blaming the GPU',
+    'reading a paper I should\'ve read last year',
+    'writing code that works on my machine',
+    'teaching my cat graph theory',
+    'reading my cat my drafts',
+  ];
+  const el = document.getElementById('nav-status-text');
+  let i = 0;
+  setInterval(() => {
+    el.style.opacity = '0';
+    setTimeout(() => {
+      i = (i + 1) % statuses.length;
+      el.textContent = statuses[i];
+      el.style.opacity = '1';
+    }, 400);
+  }, 4000);
+})();
+
+(function () {
   const io = new IntersectionObserver(
     entries => entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -512,6 +557,7 @@ function toggleBib(btn) {
   );
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
+
 </script>
 </body>
 </html>
