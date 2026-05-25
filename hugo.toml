@@ -1,7 +1,0 @@
-baseURL = 'https://rprajapati.netlify.app/'
-title = 'Rohit Prajapati'
-enableRobotsTXT = true
-
-[services]
-  [services.googleAnalytics]
-    ID = 'G-FFKB2P7K35'
