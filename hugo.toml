@@ -1,3 +1,7 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://rprajapati.netlify.app/'
+title = 'Rohit Prajapati'
+enableRobotsTXT = true
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-FFKB2P7K35'
