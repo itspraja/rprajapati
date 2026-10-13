@@ -4,33 +4,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rohit Prajapati</title>
-<meta name="description" content="PhD candidate at IIT Jodhpur & HPC Researcher at Shell R&D. Streaming graph algorithms, distributed systems, LLM inference.">
-<link rel="icon" href="/favicon.ico">
+<meta name="description" content="Rohit Prajapati — Researcher at Shell R&amp;D and PhD candidate at IIT Jodhpur, working on high-performance computing, streaming graph algorithms, and efficient AI.">
+<link rel="canonical" href="https://rprajapati.com/">
+
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://rprajapati.com/">
+<meta property="og:title" content="Rohit Prajapati">
+<meta property="og:description" content="High-performance computing, streaming graph algorithms, and efficient AI. Researcher at Shell R&amp;D · PhD candidate at IIT Jodhpur.">
+<meta property="og:image" content="https://rprajapati.com/img/rohit.jpg">
+<meta name="twitter:card" content="summary">
+
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121413" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rohit Prajapati",
+  "url": "https://rprajapati.com/",
+  "image": "https://rprajapati.com/img/rohit.jpg",
+  "jobTitle": "Researcher",
+  "worksFor": { "@type": "Organization", "name": "Shell R&D" },
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Jodhpur" },
+  "knowsAbout": ["High-performance computing", "AI workload optimisation", "Dynamic graph algorithms", "Model compression"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=Oiv4BjYAAAAJ",
+    "https://orcid.org/0009-0008-9907-7898",
+    "https://github.com/itspraja",
+    "https://linkedin.com/in/prajapati-rohit"
+  ]
+}
+</script>
+
+<script>document.documentElement.classList.add('js');</script>
+
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
 
 :root {
   --bg:           #fafaf8;
+  --nav-bg:       rgba(250,250,248,0.9);
   --surface:      #f3f1ec;
-  --surface-2:    #eceae4;
   --border:       rgba(30,27,24,0.1);
   --border-2:     rgba(30,27,24,0.18);
   --ink:          #1e1b18;
-  --ink-muted:    #6b6560;
-  --ink-faint:    #b0aba4;
+  --ink-muted:    #5f5954;
+  --ink-faint:    #77716b;
   --green:        #0d6b4f;
   --green-bg:     #edf7f3;
-  --green-border: rgba(13,107,79,0.2);
+  --green-border: rgba(13,107,79,0.22);
   --amber:        #92400e;
   --amber-bg:     #fef9ed;
-  --amber-border: rgba(146,64,14,0.2);
+  --amber-border: rgba(146,64,14,0.22);
   --serif:        'DM Serif Display', Georgia, serif;
-  --sans:         'Inter', system-ui, sans-serif;
-  --mono:         'JetBrains Mono', monospace;
+  --sans:         'Inter', system-ui, -apple-system, sans-serif;
+  --mono:         'JetBrains Mono', ui-monospace, Menlo, monospace;
   --radius:       3px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:           #121413;
+    --nav-bg:       rgba(18,20,19,0.85);
+    --surface:      #1b1e1c;
+    --border:       rgba(236,234,228,0.09);
+    --border-2:     rgba(236,234,228,0.18);
+    --ink:          #ecebe6;
+    --ink-muted:    #b8b3ac;
+    --ink-faint:    #8f8a83;
+    --green:        #6cc3a0;
+    --green-bg:     rgba(108,195,160,0.1);
+    --green-border: rgba(108,195,160,0.3);
+    --amber:        #e2a75c;
+    --amber-bg:     rgba(226,167,92,0.1);
+    --amber-border: rgba(226,167,92,0.3);
+  }
 }
 
 body {
@@ -40,8 +97,12 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 2px; }
+.icon { width: 16px; height: 16px; fill: currentColor; }
 
-/* ── Nav ── */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -50,8 +111,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
   padding: 0 2.5rem;
-  background: rgba(250,250,248,0.92);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -62,14 +124,15 @@ body {
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 .nav-status {
   display: flex;
   align-items: center;
   gap: 7px;
+  min-width: 0;
   font-size: 12.5px;
   color: var(--ink-muted);
-  font-family: var(--sans);
 }
 .nav-status-dot {
   width: 7px;
@@ -77,29 +140,31 @@ body {
   border-radius: 50%;
   background: var(--green);
   flex-shrink: 0;
-  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+.nav-status-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nav-status-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+  .nav-status-text { transition: opacity 0.4s; }
 }
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.85); }
 }
-.nav-status-text {
-  transition: opacity 0.4s;
-}
 
-/* ── Container ── */
-.page { max-width: 780px; margin: 0 auto; padding: 0 2.5rem; }
+.page { max-width: 800px; margin: 0 auto; padding: 0 2.5rem; }
 
-/* ── Hero ── */
 .hero {
-  padding: 7rem 0 4.5rem;
+  padding: 7.5rem 0 4.5rem;
   border-bottom: 1px solid var(--border);
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: minmax(0, 1fr) 200px;
   gap: 3rem;
   align-items: start;
 }
-.hero-text {}
 .hero-name {
   font-family: var(--serif);
   font-size: clamp(2.8rem, 6vw, 4rem);
@@ -107,13 +172,12 @@ body {
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--green);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 .hero-role {
   font-size: 13px;
   color: var(--ink-faint);
   margin-bottom: 1.8rem;
-  font-weight: 400;
   letter-spacing: 0.01em;
 }
 .hero-bio {
@@ -121,64 +185,69 @@ body {
   line-height: 1.82;
   color: var(--ink-muted);
   font-weight: 300;
-  margin-bottom: 2rem;
   max-width: 540px;
 }
+.hero-bio + .hero-bio { margin-top: 0.9rem; }
 .hero-bio strong { color: var(--ink); font-weight: 500; }
-.hero-bio a {
-  color: var(--green);
-  text-decoration: none;
-  border-bottom: 1px solid var(--green-border);
-  transition: border-color 0.15s;
-}
-.hero-bio a:hover { border-color: var(--green); }
-.hero-links {
+
+.focus {
+  list-style: none;
   display: flex;
-  gap: 10px;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 1.6rem 0 1.8rem;
 }
+.focus li {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+  padding: 4px 10px;
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+}
+.focus li:first-child { color: var(--green); border-color: var(--green-border); background: var(--green-bg); }
+
+.hero-links { list-style: none; display: flex; gap: 10px; align-items: center; }
 .icon-btn {
   width: 38px;
   height: 38px;
   border-radius: var(--radius);
   border: 1px solid var(--border-2);
-  background: transparent;
   color: var(--ink-faint);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
-.icon-btn:hover {
-  color: var(--green);
-  border-color: var(--green-border);
-  background: var(--green-bg);
-}
-.icon-btn svg { width: 16px; height: 16px; fill: currentColor; }
+.icon-btn:hover { color: var(--green); border-color: var(--green-border); background: var(--green-bg); }
 
-/* Photo */
-.hero-photo-col {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 0.5rem;
+.hero-photo-col { display: flex; justify-content: flex-end; padding-top: 0.5rem; }
+.hero-photo-frame { position: relative; }
+.hero-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(10px, 10px);
+  border: 1px solid var(--green-border);
+  border-radius: 4px;
 }
 .hero-photo {
+  position: relative;
+  display: block;
   width: 190px;
   height: 228px;
   object-fit: cover;
   object-position: center top;
   border-radius: 4px;
-  filter: grayscale(8%);
   border: 1px solid var(--border);
   box-shadow: 0 2px 20px rgba(30,27,24,0.08);
+  background: var(--surface);
 }
 
-/* ── Sections ── */
-section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
-section:last-of-type { border-bottom: none; }
-
+section { padding: 4rem 0; border-bottom: 1px solid var(--border); scroll-margin-top: 52px; }
 .sec-header {
+  font-family: var(--sans);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -187,49 +256,39 @@ section:last-of-type { border-bottom: none; }
   margin-bottom: 2.2rem;
 }
 
-/* ── Lately ── */
-.news-list { display: flex; flex-direction: column; gap: 0; }
+.news-list { list-style: none; }
 .news-row {
   display: grid;
-  grid-template-columns: 88px 1fr;
+  grid-template-columns: 88px minmax(0, 1fr);
   gap: 0 1.5rem;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--border);
   align-items: baseline;
 }
 .news-row:last-child { border-bottom: none; }
-.news-date {
-  font-size: 12px;
-  color: var(--ink-faint);
-  font-family: var(--mono);
-  flex-shrink: 0;
-}
-.news-body {
-  font-size: 14px;
-  color: var(--ink-muted);
-  line-height: 1.65;
-  font-weight: 300;
-}
+.news-date { font-size: 12px; color: var(--ink-faint); font-family: var(--mono); }
+.news-body { font-size: 14px; color: var(--ink-muted); line-height: 1.65; font-weight: 300; }
 .news-body strong { color: var(--ink); font-weight: 500; }
+.news-new {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-left: 6px;
+  vertical-align: 1px;
+}
 
-/* ── Publications ── */
-.pub-list { display: flex; flex-direction: column; gap: 0; }
-.pub-row {
-  padding: 1.6rem 0;
-  border-bottom: 1px solid var(--border);
-}
+.pub-list { list-style: none; }
+.pub-row { padding: 1.6rem 0; border-bottom: 1px solid var(--border); }
+.pub-row:first-child { padding-top: 0; }
 .pub-row:last-child { border-bottom: none; }
-.pub-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 5px;
-}
+.pub-top { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 6px; }
 .venue-tag {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 3px 7px;
   border-radius: 2px;
@@ -241,28 +300,18 @@ section:last-of-type { border-bottom: none; }
 .v-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
 .pub-title {
   font-family: var(--serif);
-  font-size: 1.05rem;
+  font-weight: 400;
+  font-size: 1.1rem;
   color: var(--ink);
   line-height: 1.4;
 }
-.pub-authors {
-  font-size: 13px;
-  color: var(--ink-faint);
-  margin-bottom: 3px;
-  font-weight: 300;
-}
-.pub-authors strong { color: var(--ink-muted); font-weight: 400; }
-.pub-venue-full {
-  font-size: 12px;
-  color: var(--ink-faint);
-  font-style: italic;
-  margin-top: 3px;
-  margin-bottom: 10px;
-}
-.pub-actions { display: flex; gap: 8px; }
+.pub-authors { font-size: 13px; color: var(--ink-faint); margin-bottom: 3px; font-weight: 300; }
+.pub-authors strong { color: var(--ink-muted); font-weight: 500; }
+.pub-venue-full { font-size: 12px; color: var(--ink-faint); font-style: italic; margin: 3px 0 10px; }
+.pub-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .pub-action {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 10.5px;
   letter-spacing: 0.06em;
   color: var(--ink-faint);
   background: transparent;
@@ -273,24 +322,28 @@ section:last-of-type { border-bottom: none; }
   text-decoration: none;
   transition: color 0.15s, border-color 0.15s;
 }
-.pub-action:hover { color: var(--green); border-color: var(--green-border); }
-.bib-block {
-  display: none;
-  margin-top: 10px;
+.pub-action:hover, .pub-action[aria-expanded="true"] { color: var(--green); border-color: var(--green-border); }
+.pub-status {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--green);
+  padding: 3px 0;
+}
+.bib-block { position: relative; margin-top: 10px; }
+.bib-block pre {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem 1.1rem;
+  padding: 1rem 4.5rem 1rem 1.1rem;
   font-family: var(--mono);
   font-size: 11.5px;
   line-height: 1.75;
   color: var(--ink-muted);
-  white-space: pre;
   overflow-x: auto;
 }
-.bib-block.open { display: block; }
+.bib-copy { position: absolute; top: 8px; right: 8px; background: var(--bg); }
 
-/* ── Footer ── */
 .footer {
   padding: 2rem 0 2.5rem;
   display: flex;
@@ -299,16 +352,8 @@ section:last-of-type { border-bottom: none; }
   flex-wrap: wrap;
   gap: 1rem;
 }
-.footer-name {
-  font-family: var(--serif);
-  font-size: 1rem;
-  color: var(--ink-muted);
-}
-.footer-copy {
-  font-size: 12px;
-  color: var(--ink-faint);
-}
-.footer-icons { display: flex; gap: 6px; }
+.footer-copy { font-size: 12px; color: var(--ink-faint); }
+.footer-icons { list-style: none; display: flex; gap: 6px; }
 .footer-icons a {
   width: 32px;
   height: 32px;
@@ -317,224 +362,292 @@ section:last-of-type { border-bottom: none; }
   align-items: center;
   justify-content: center;
   color: var(--ink-faint);
-  text-decoration: none;
   transition: color 0.15s;
 }
 .footer-icons a:hover { color: var(--green); }
-.footer-icons svg { width: 14px; height: 14px; fill: currentColor; }
+.footer-icons .icon { width: 14px; height: 14px; }
 
-/* ── Reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .js .reveal.visible { opacity: 1; transform: none; }
 }
-.reveal.visible { opacity: 1; transform: none; }
 
-/* ── Responsive ── */
 @media (max-width: 600px) {
   .page { padding: 0 1.25rem; }
-  .nav { padding: 0 1.25rem; }
-  .hero { grid-template-columns: 1fr; gap: 2rem; }
+  .nav { padding: 0 1.25rem; gap: 1rem; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-top: 6rem; }
   .hero-photo-col { justify-content: flex-start; order: -1; }
   .hero-photo { width: 120px; height: 144px; }
+  .hero-photo-frame::before { transform: translate(7px, 7px); }
   .hero-name { font-size: 2.6rem; }
-  .news-row { grid-template-columns: 72px 1fr; }
+  .news-row { grid-template-columns: 72px minmax(0, 1fr); }
+  .pub-top { flex-direction: column; gap: 0.4rem; }
 }
 </style>
 </head>
 <body>
 
-<nav class="nav">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.930 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 10a8 8 0 017.162 3.44L24 9.5z"/></symbol>
+  <symbol id="i-orcid" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.872-3.722h-2.297z"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="Site">
   <a href="#top" class="nav-mark">Rohit Prajapati</a>
-  <div class="nav-status">
+  <div class="nav-status" aria-hidden="true">
     <span class="nav-status-dot"></span>
     <span class="nav-status-text" id="nav-status-text">debugging a graph</span>
   </div>
 </nav>
 
-<div class="page">
+<main class="page">
 
-  <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-text">
       <h1 class="hero-name">Rohit Prajapati</h1>
-      <div class="hero-role">PhD Candidate, IIT Jodhpur &nbsp;·&nbsp; Researcher, Shell R&amp;D</div>
+      <div class="hero-role">Researcher, Shell R&amp;D &nbsp;·&nbsp; PhD Candidate, IIT Jodhpur</div>
       <p class="hero-bio">
-        I research <strong>streaming graph algorithms</strong> and <strong>distributed systems</strong>, with a focus on how graphs can serve as a unifying framework for real-time analytics, scalable computation, and efficient AI. My work spans algorithm design for dynamic graph problems, distributed frameworks for large-scale graph processing, and the application of graph-structured reasoning to AI systems. At <strong>Shell R&amp;D</strong>, I build and optimize large-scale <strong>LLM inference</strong> and retrieval pipelines on HPC infrastructure, working at the boundary between systems research and applied AI.
+        I work on <strong>high-performance computing</strong>: designing parallel and distributed systems that make large-scale computation fast, scalable, and efficient. Building on that, I develop dynamic graph algorithms for real-time workloads on distributed and parallel systems.
       </p>
-      <div class="hero-links">
-        <a class="icon-btn" href="mailto:prajapati.rohit@hotmail.com" title="Email">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://linkedin.com/in/prajapati-rohit" target="_blank" rel="noopener" title="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://github.com/itspraja" target="_blank" rel="noopener" title="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
-        <a class="icon-btn" href="https://scholar.google.com/citations?user=Oiv4BjYAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
-          <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 10a8 8 0 017.162 3.44L24 9.5z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://orcid.org/0009-0008-9907-7898" target="_blank" rel="noopener" title="ORCID">
-          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.872-3.722h-2.297z"/></svg>
-        </a>
-      </div>
+      <p class="hero-bio">
+        At <strong>Shell R&amp;D</strong>, I build production agentic RAG systems over multi-collection vector stores and <strong>optimise high-performance computing for large-scale AI workloads</strong>.
+      </p>
+      <ul class="focus" aria-label="Research focus">
+        <li>High-performance computing</li>
+        <li>AI workload optimisation</li>
+        <li>Dynamic graph algorithms</li>
+        <li>Model compression</li>
+      </ul>
+      <ul class="hero-links">
+        <li><a class="icon-btn" href="mailto:prajapati.rohit@hotmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+        <li><a class="icon-btn" href="https://linkedin.com/in/prajapati-rohit" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a class="icon-btn" href="https://github.com/itspraja" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a class="icon-btn" href="https://scholar.google.com/citations?user=Oiv4BjYAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+        <li><a class="icon-btn" href="https://orcid.org/0009-0008-9907-7898" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+      </ul>
     </div>
     <div class="hero-photo-col">
-      <img class="hero-photo" src="/img/rohit.jpg" alt="Rohit Prajapati">
+      <div class="hero-photo-frame">
+        <img class="hero-photo" src="/img/rohit.jpg" width="602" height="720" alt="Portrait of Rohit Prajapati" fetchpriority="high">
+      </div>
     </div>
   </section>
 
-  <!-- WHAT'S NEW -->
-  <section id="news">
-    <div class="sec-header reveal">Lately</div>
-    <div class="news-list">
-      <div class="news-row reveal">
-        <div class="news-date">Jul 2026</div>
+  <section id="news" aria-labelledby="news-h">
+    <h2 class="sec-header reveal" id="news-h">Lately</h2>
+    <ul class="news-list">
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2026-10">Oct 2026</time>
+        <div class="news-body">Paper accepted at <strong>HiPC 2026</strong> — LayComp: Layer-by-Layer Compression for Transformers.<span class="news-new">New</span></div>
+      </li>
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2026-07">Jul 2026</time>
         <div class="news-body">Presented <strong>SAGA</strong> at HPDC 2026 in Cleveland, OH.</div>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">Jun 2026</div>
-        <div class="news-body">Attending <strong>SIGMOD/PODS 2026</strong> in Bengaluru.</div>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">May 2026</div>
-        <div class="news-body">Paper accepted at <strong>HPDC 2026</strong> — SAGA: A Framework for State-Aware Streaming Graph Analytics.</div>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">Apr 2026</div>
+      </li>
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2026-06">Jun 2026</time>
+        <div class="news-body">Paper published at <strong>EAGE 2026</strong> — E-DALE: End-to-End Domain Adaptation for Large Language Models in the Energy Sector.</div>
+      </li>
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2026-05">May 2026</time>
+        <div class="news-body">Paper accepted at <strong>HPDC 2026</strong> — SAGA: State-Aware Graph Analytics for Combinatorial Optimization on Dynamic Graphs.</div>
+      </li>
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2026-04">Apr 2026</time>
         <div class="news-body">Paper accepted at <strong>SIGMOD 2026</strong> — PJsim: Towards Precise and Scalable Graph Similarity.</div>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">Jan 2026</div>
+      </li>
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2026-01">Jan 2026</time>
         <div class="news-body">Paper accepted at <strong>ICDCN 2026</strong> — A Precise and Closed-Form Solution for Edge-Ranking.</div>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">Aug 2025</div>
+      </li>
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2025-09">Sep 2025</time>
         <div class="news-body">Joined <strong>Shell R&amp;D</strong> as Researcher in the Digital &amp; Scientific HPC team.</div>
-      </div>
-      <div class="news-row reveal">
-        <div class="news-date">Jan 2025</div>
+      </li>
+      <li class="news-row reveal">
+        <time class="news-date" datetime="2025-01">Jan 2025</time>
         <div class="news-body">Started PhD at <strong>IIT Jodhpur</strong>, SPADE Research Lab.</div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section id="papers">
-    <div class="sec-header reveal">Publications</div>
-    <div class="pub-list">
+  <section id="papers" aria-labelledby="papers-h">
+    <h2 class="sec-header reveal" id="papers-h">Publications</h2>
+    <ol class="pub-list">
 
-      <div class="pub-row reveal">
+      <li class="pub-row reveal">
+        <div class="pub-top">
+          <span class="venue-tag v-amber">HiPC 2026</span>
+          <h3 class="pub-title">LayComp: Layer-by-Layer Compression for Transformers</h3>
+        </div>
+        <div class="pub-authors"><strong>Rohit Prajapati</strong>, Mudit Sand, Kapil Mathur, Subhasis Banerjee &nbsp;·&nbsp; Bengaluru, India</div>
+        <div class="pub-venue-full">33rd IEEE International Conference on High Performance Computing</div>
+        <div class="pub-actions">
+          <span class="pub-status">To appear · Dec 2026</span>
+        </div>
+      </li>
+
+      <li class="pub-row reveal">
         <div class="pub-top">
           <span class="venue-tag v-green">HPDC 2026</span>
-          <div class="pub-title">SAGA: A Framework for State-Aware Streaming Graph Analytics</div>
+          <h3 class="pub-title">SAGA: State-Aware Graph Analytics for Combinatorial Optimization on Dynamic Graphs</h3>
         </div>
         <div class="pub-authors"><strong>Rohit Prajapati</strong>, Prajjwal Nijhara, Dip Sankar Banerjee &nbsp;·&nbsp; Cleveland, OH, USA</div>
         <div class="pub-venue-full">ACM International Symposium on High-Performance Parallel and Distributed Computing</div>
         <div class="pub-actions">
           <a class="pub-action" href="https://doi.org/10.1145/3806645.3807595" target="_blank" rel="noopener">DOI</a>
-          <button class="pub-action" onclick="toggleBib(this)">BibTeX</button>
+          <button class="pub-action" type="button" aria-expanded="false" aria-controls="bib-saga">BibTeX</button>
         </div>
-        <div class="bib-block">@inproceedings{prajapati2026saga,
-  author    = {Prajapati, Rohit and Banerjee, Dip Sankar},
-  title     = {SAGA: A Framework for State-Aware Streaming Graph Analytics},
+        <div class="bib-block" id="bib-saga" hidden>
+<pre>@inproceedings{prajapati2026saga,
+  author    = {Prajapati, Rohit and Nijhara, Prajjwal and
+               Banerjee, Dip Sankar},
+  title     = {SAGA: State-Aware Graph Analytics for Combinatorial
+               Optimization on Dynamic Graphs},
   booktitle = {Proceedings of the 35th International Symposium on
                High-Performance Parallel and Distributed Computing},
   series    = {HPDC '26},
+  pages     = {430--444},
   year      = {2026},
   address   = {Cleveland, OH, USA},
   publisher = {ACM},
-}</div>
-      </div>
+  doi       = {10.1145/3806645.3807595}
+}</pre>
+          <button class="pub-action bib-copy" type="button">Copy</button>
+        </div>
+      </li>
 
-      <div class="pub-row reveal">
+      <li class="pub-row reveal">
+        <div class="pub-top">
+          <span class="venue-tag v-amber">EAGE 2026</span>
+          <h3 class="pub-title">E-DALE: End-to-End Domain Adaptation for Large Language Models in the Energy Sector</h3>
+        </div>
+        <div class="pub-authors">Injy Sarhan, Avanindra Singh, Lalson Vincent, Yogesh Nakhate, Mudit Sand, Eirini Stamatiou, <strong>Rohit Prajapati</strong>, Oleg Ovcharenko, Oleg Sudakov, Filippo Broggini, Sagar Desai, Detlef Hohl &nbsp;·&nbsp; Aberdeen, UK</div>
+        <div class="pub-venue-full">87th EAGE Annual Conference &amp; Exhibition</div>
+        <div class="pub-actions">
+          <a class="pub-action" href="https://www.earthdoc.org/content/papers/10.3997/2214-4609.2026101329" target="_blank" rel="noopener">EarthDoc</a>
+          <button class="pub-action" type="button" aria-expanded="false" aria-controls="bib-edale">BibTeX</button>
+        </div>
+        <div class="bib-block" id="bib-edale" hidden>
+<pre>@inproceedings{sarhan2026edale,
+  author    = {Sarhan, Injy and Singh, Avanindra and Vincent, Lalson and
+               Nakhate, Yogesh and Sand, Mudit and Stamatiou, Eirini and
+               Prajapati, Rohit and Ovcharenko, Oleg and Sudakov, Oleg and
+               Broggini, Filippo and Desai, Sagar and Hohl, Detlef},
+  title     = {E-DALE: End-to-End Domain Adaptation for Large Language
+               Models in the Energy Sector},
+  booktitle = {87th EAGE Annual Conference \&amp; Exhibition},
+  year      = {2026},
+  address   = {Aberdeen, UK},
+  publisher = {European Association of Geoscientists \&amp; Engineers},
+  doi       = {10.3997/2214-4609.2026101329}
+}</pre>
+          <button class="pub-action bib-copy" type="button">Copy</button>
+        </div>
+      </li>
+
+      <li class="pub-row reveal">
         <div class="pub-top">
           <span class="venue-tag v-green">SIGMOD 2026</span>
-          <div class="pub-title">PJsim: Towards Precise and Scalable Graph Similarity</div>
+          <h3 class="pub-title">PJsim: Towards Precise and Scalable Graph Similarity</h3>
         </div>
-        <div class="pub-authors">Prajjwal Nijhara, Jainan Tandel, <strong>Rohit Prajapati</strong>, Dip Sankar Banerjee &nbsp;·&nbsp; Bangalore, India</div>
-        <div class="pub-venue-full">ACM International Conference on Management of Data</div>
+        <div class="pub-authors">Prajjwal Nijhara, Jainan Tandel, <strong>Rohit Prajapati</strong>, Dip Sankar Banerjee &nbsp;·&nbsp; Bengaluru, India</div>
+        <div class="pub-venue-full">Proceedings of the ACM on Management of Data, Vol. 4, No. 3</div>
         <div class="pub-actions">
           <a class="pub-action" href="https://doi.org/10.1145/3802100" target="_blank" rel="noopener">DOI</a>
-          <button class="pub-action" onclick="toggleBib(this)">BibTeX</button>
+          <button class="pub-action" type="button" aria-expanded="false" aria-controls="bib-pjsim">BibTeX</button>
         </div>
-        <div class="bib-block">@inproceedings{nijhara2026pjsim,
+        <div class="bib-block" id="bib-pjsim" hidden>
+<pre>@article{nijhara2026pjsim,
   author    = {Nijhara, Prajjwal and Tandel, Jainan and
                Prajapati, Rohit and Banerjee, Dip Sankar},
   title     = {PJsim: Towards Precise and Scalable Graph Similarity},
-  booktitle = {Proceedings of the ACM SIGMOD International Conference
-               on Management of Data},
-  series    = {SIGMOD '26},
+  journal   = {Proceedings of the ACM on Management of Data},
+  volume    = {4},
+  number    = {3},
+  pages     = {1--25},
   year      = {2026},
-  address   = {Bangalore, India},
   publisher = {ACM},
-}</div>
-      </div>
+  doi       = {10.1145/3802100}
+}</pre>
+          <button class="pub-action bib-copy" type="button">Copy</button>
+        </div>
+      </li>
 
-      <div class="pub-row reveal">
+      <li class="pub-row reveal">
         <div class="pub-top">
           <span class="venue-tag v-amber">ICDCN 2026</span>
-          <div class="pub-title">A Precise and Closed-Form Solution for Edge-Ranking</div>
+          <h3 class="pub-title">A Precise and Closed-Form Solution for Edge-Ranking</h3>
         </div>
         <div class="pub-authors">Prajjwal Nijhara, Jainan Tandel, <strong>Rohit Prajapati</strong>, Dip Sankar Banerjee &nbsp;·&nbsp; Nara, Japan</div>
         <div class="pub-venue-full">International Conference on Distributed Computing and Networking</div>
         <div class="pub-actions">
           <a class="pub-action" href="https://doi.org/10.1145/3772290.3772316" target="_blank" rel="noopener">DOI</a>
-          <button class="pub-action" onclick="toggleBib(this)">BibTeX</button>
+          <button class="pub-action" type="button" aria-expanded="false" aria-controls="bib-edgerank">BibTeX</button>
         </div>
-        <div class="bib-block">@inproceedings{nijhara2026edgeranking,
+        <div class="bib-block" id="bib-edgerank" hidden>
+<pre>@inproceedings{nijhara2026edgeranking,
   author    = {Nijhara, Prajjwal and Tandel, Jainan and
                Prajapati, Rohit and Banerjee, Dip Sankar},
   title     = {A Precise and Closed-Form Solution for Edge-Ranking},
-  booktitle = {Proceedings of the International Conference on
+  booktitle = {Proceedings of the 27th International Conference on
                Distributed Computing and Networking},
   series    = {ICDCN '26},
+  pages     = {138--142},
   year      = {2026},
   address   = {Nara, Japan},
   publisher = {ACM},
-}</div>
-      </div>
+  doi       = {10.1145/3772290.3772316}
+}</pre>
+          <button class="pub-action bib-copy" type="button">Copy</button>
+        </div>
+      </li>
 
-    </div>
+    </ol>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-copy" id="footer-copy"></div>
-    <div class="footer-icons">
-      <a href="mailto:prajapati.rohit@hotmail.com" title="Email">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      </a>
-      <a href="https://linkedin.com/in/prajapati-rohit" target="_blank" rel="noopener" title="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://github.com/itspraja" target="_blank" rel="noopener" title="GitHub">
-        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-      <a href="https://scholar.google.com/citations?user=Oiv4BjYAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
-        <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 10a8 8 0 017.162 3.44L24 9.5z"/></svg>
-      </a>
-      <a href="https://orcid.org/0009-0008-9907-7898" target="_blank" rel="noopener" title="ORCID">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.872-3.722h-2.297z"/></svg>
-      </a>
-    </div>
+    <div class="footer-copy" id="footer-copy">© 2025–2026 Rohit Prajapati</div>
+    <ul class="footer-icons">
+      <li><a href="mailto:prajapati.rohit@hotmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+      <li><a href="https://linkedin.com/in/prajapati-rohit" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+      <li><a href="https://github.com/itspraja" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+      <li><a href="https://scholar.google.com/citations?user=Oiv4BjYAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a></li>
+      <li><a href="https://orcid.org/0009-0008-9907-7898" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a></li>
+    </ul>
   </footer>
 
-</div>
+</main>
 
 <script>
-function toggleBib(btn) {
-  const block = btn.closest('.pub-actions').nextElementSibling;
-  const open  = block.classList.toggle('open');
-  btn.textContent = open ? 'Hide' : 'BibTeX';
-}
+document.querySelectorAll('[aria-controls^="bib-"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const block = document.getElementById(btn.getAttribute('aria-controls'));
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Hide' : 'BibTeX';
+    block.hidden = !open;
+  });
+});
+document.querySelectorAll('.bib-copy').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(btn.previousElementSibling.textContent);
+      btn.textContent = 'Copied';
+    } catch {
+      btn.textContent = 'Select & copy';
+    }
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+  });
+});
 
 (function () {
   const start = 2025, now = new Date().getFullYear();
-  const el = document.getElementById('footer-copy');
-  el.textContent = '© ' + (now > start ? start + '–' + now : start) + ' Rohit Prajapati';
+  document.getElementById('footer-copy').textContent =
+    '© ' + (now > start ? start + '–' + now : start) + ' Rohit Prajapati';
 })();
 
 (function () {
@@ -563,15 +676,13 @@ function toggleBib(btn) {
 })();
 
 (function () {
-  const io = new IntersectionObserver(
-    entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    }),
-    { threshold: 0.1 }
-  );
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { items.forEach(el => el.classList.add('visible')); return; }
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  }), { threshold: 0.1 });
+  items.forEach(el => io.observe(el));
 })();
-
 </script>
 </body>
 </html>

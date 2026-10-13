@@ -1,3 +1,8 @@
 .DS_Store
 .claude/
 node_modules/
+
+.hugo_build.lock
+public/
+resources/
+themes/
